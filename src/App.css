@@ -1,0 +1,65 @@
+.App {
+
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+html{
+    background-color: #2b3138;
+}
+
+#root {
+  color: #f3f5f7;
+  background-color: #2b3138;
+  height: 100%;
+}
+
+::placeholder {
+  color: #aaadaf !important;
+}
+.btn-custom {
+  background-color: #2e659e !important;
+  color: #f3f5f7 !important;
+}
+.navbar{
+  padding: .5em 2em;
+}
+
+.primary-header{
+  padding: 1em 0;
+}
+.primary-body{
+  padding: 1em 0;
+}
+
+form {
+  max-width: 650px;
+}
+
+input, select, textarea {
+  background-color: #f3f5f7 !important;
+  color: #179ff9 !important;
+}
+
+small {
+  color: #179ff9;
+}
+.errorMessage {
+  color: #f53c83;
+}
