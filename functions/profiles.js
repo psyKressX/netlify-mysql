@@ -6,14 +6,10 @@ exports.handler = (event, context, callback) => {
   const { MY_HOST, MY_USER, MY_PASS, MY_DB } = process.env;
 
   const connection = mysql.createConnection({
-    // host: "sql12.freemysqlhosting.net",
-    // user: "sql12316942",
-    // password: "jFuH2feH39",
-    // database: "sql12316942"
-    host: "localhost",
-    user: "root",
-    password: "getinzachopa123",
-    database: "new_schema"
+    host: "sql12.freemysqlhosting.net",
+    user: "sql12316942",
+    password: "jFuH2feH39",
+    database: "sql12316942"
   });
 
   connection.connect(function(error){
