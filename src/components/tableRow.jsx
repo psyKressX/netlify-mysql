@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-
+//simple table row rendering component
 class Row extends Component {
-
-componentDidMount(){
-  console.log(this.props.id);
-}
 
   render() {
 

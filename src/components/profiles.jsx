@@ -8,6 +8,7 @@ class Profiles extends Component {
       profiles: []
     }
   }
+  //calls api to return all profiles then sets to state
   fetchProfiles= () =>{
     fetch('/.netlify/functions/profiles')
       .then(res => res.json())
@@ -20,6 +21,7 @@ class Profiles extends Component {
   componentDidMount() {
     this.fetchProfiles();
   }
+  //uses prop from App.js to tell profiles when to update state then turns off fetching state
   componentWillUpdate(pP) {
     if(pP.fetch){
       this.fetchProfiles();
@@ -27,7 +29,7 @@ class Profiles extends Component {
     }
   }
 
-
+//renders props in table using tableRow component with map
   render() {
     return (
       <div>

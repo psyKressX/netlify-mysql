@@ -1,10 +1,12 @@
 "use strict";
 const sql = require("./sql");
 const bodyParser = require('body-parser');
+const mysql = require("mysql");
 const validate = require('./accountValidation.js');
 
 exports.handler = async (event, context, callback) => {
   try {
+    //test to see it is a post request
     if (event.httpMethod !== "POST") {
       return { statusCode: 405, body: "Method Not Allowed" };
     }

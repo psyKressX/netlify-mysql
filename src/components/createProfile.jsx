@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 class CreateProfile extends Component {
-
+  //state that holds user input and the return values of the back end calls for errorMessage
   state={
     firstName: null,
     lastName: null,
@@ -22,13 +22,14 @@ class CreateProfile extends Component {
       confirm: null
     }
   }
-
+//event that updates the state when value is changed in form feilds
   handleChange = e =>{
     e.preventDefault();
     const { name, value } = e.target;
     this.setState({ [name]: value});
   }
-
+//on submit sends the value from the state to the api and makes a post request to mysql
+//api then returns form errors and sets them to the state
   handleSubmit = e =>{
     e.preventDefault();
     const { firstName, lastName, userName, gender, email, password, confirm } = this.state;
@@ -41,7 +42,6 @@ class CreateProfile extends Component {
       res => res.json()
     )
     .then(res =>  {
-      console.log("this is result", res);
       this.setState({ formErrors : res });
       this.props.refresh();
     })

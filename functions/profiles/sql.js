@@ -13,23 +13,15 @@ const pool = mysql.createPool({
 
 const query = (string) => {
   return new Promise((res, reject)=>{
-    pool.getConnection(function(err, conn){
-      if(err){
-          return reject(err)
+    pool.query( string , (err, data)=>{
+      if(err) {
+        return reject(err)
       }
-      else{
-        conn.query( string , (err, data)=>{
-          if(err) {
-            return reject(err)
-          }
-          else {
-            return res(data)
-          }
-          conn.release();
-        });
+      else {
+        return res(data)
       }
-    })
-  });
+    });
+  })
 }
 
 exports.query = query;

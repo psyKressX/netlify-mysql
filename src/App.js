@@ -7,6 +7,7 @@ import CreateProfile from './components/createProfile';
 import Profiles from './components/profiles';
 
 class App extends Component {
+  //basic refresh param for updating the profiles table
   state={
     isFetching: false
   }

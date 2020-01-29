@@ -14,6 +14,7 @@ const pool = mysql.createPool({
 const query = (string) => {
   return new Promise((res, reject)=>{
     pool.getConnection(function(err, conn){
+      conn.release();
       if(err){
           return reject(err)
       }
@@ -25,7 +26,6 @@ const query = (string) => {
           else {
             return res(data)
           }
-          conn.release();
         });
       }
     })
